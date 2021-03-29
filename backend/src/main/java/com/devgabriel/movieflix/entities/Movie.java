@@ -3,6 +3,8 @@ package com.devgabriel.movieflix.entities;
 import com.devgabriel.movieflix.common.LogFields;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -23,6 +25,9 @@ public class Movie extends LogFields {
   @ManyToOne
   @JoinColumn(name = "genre_id")
   private Genre genre;
+
+  @OneToMany(mappedBy = "movie")
+  private final List<Review> reviews = new ArrayList<>();
 
   public Movie() {
   }
@@ -91,6 +96,10 @@ public class Movie extends LogFields {
 
   public void setGenre(Genre genre) {
     this.genre = genre;
+  }
+
+  public List<Review> getReviews() {
+    return reviews;
   }
 
   @Override

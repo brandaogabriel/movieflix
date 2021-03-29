@@ -24,6 +24,9 @@ public class User extends LogFields implements UserDetails {
 
   private String password;
 
+  @OneToMany(mappedBy = "user")
+  private final List<Review> reviews = new ArrayList<>();
+
   @ManyToMany(fetch = FetchType.EAGER)
   @JoinTable(
           name = "user_role",
@@ -64,6 +67,10 @@ public class User extends LogFields implements UserDetails {
 
   public void setEmail(String email) {
     this.email = email;
+  }
+
+  public List<Review> getReviews() {
+    return reviews;
   }
 
   @Override
