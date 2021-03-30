@@ -2,7 +2,6 @@ package com.devgabriel.movieflix.dtos;
 
 import com.devgabriel.movieflix.entities.Movie;
 import com.devgabriel.movieflix.entities.Review;
-import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -16,9 +15,8 @@ public class MovieDTO implements Serializable {
   private Integer year;
   private String imgUrl;
   private String synopsis;
+  private Long genreId;
 
-  @JsonProperty("genre")
-  private GenreDTO genreDTO;
   private final List<ReviewDTO> reviews = new ArrayList<>();
 
   public MovieDTO() {
@@ -31,7 +29,7 @@ public class MovieDTO implements Serializable {
     year = entity.getYear();
     imgUrl = entity.getImgUrl();
     synopsis = entity.getSynopsis();
-    genreDTO = new GenreDTO(entity.getGenre());
+    genreId = entity.getGenre().getId();
   }
 
   public MovieDTO(Movie entity, List<Review> reviews) {
@@ -87,12 +85,12 @@ public class MovieDTO implements Serializable {
     this.synopsis = synopsis;
   }
 
-  public GenreDTO getGenreDTO() {
-    return genreDTO;
+  public Long getGenreId() {
+    return genreId;
   }
 
-  public void setGenreDTO(GenreDTO genreDTO) {
-    this.genreDTO = genreDTO;
+  public void setGenreId(Long genreId) {
+    this.genreId = genreId;
   }
 
   public List<ReviewDTO> getReviews() {

@@ -1,7 +1,9 @@
 package com.devgabriel.movieflix.services;
 
 import com.devgabriel.movieflix.dtos.MovieDTO;
+import com.devgabriel.movieflix.entities.Genre;
 import com.devgabriel.movieflix.entities.Movie;
+import com.devgabriel.movieflix.repositories.GenreRepository;
 import com.devgabriel.movieflix.repositories.MovieRepository;
 import com.devgabriel.movieflix.services.exceptions.ResourceNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +22,9 @@ public class MovieService {
   @Autowired
   private MovieRepository repository;
 
+  @Autowired
+  private GenreRepository genreRepository;
+
   @Transactional(readOnly = true)
   public List<MovieDTO> findAll() {
     List<Movie> movies = repository.findAll();
@@ -29,8 +34,9 @@ public class MovieService {
   }
 
   @Transactional(readOnly = true)
-  public Page<MovieDTO> findAllPaged(PageRequest pageRequest) {
-    Page<Movie> movies = repository.findAll(pageRequest);
+  public Page<MovieDTO> findAllPaged(Long genreId, PageRequest pageRequest) {
+    Genre genre = (genreId == 0) ? null : genreRepository.getOne(genreId);
+    Page<Movie> movies = repository.find(genre, pageRequest);
     return movies.map(MovieDTO::new);
   }
 
