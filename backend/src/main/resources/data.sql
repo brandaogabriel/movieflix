@@ -104,3 +104,28 @@ VALUES ('https://www.themoviedb.org/t/p/w533_and_h300_bestv2/66z2nfpzKTokJ5i8mW5
         'Just when you think you''ve found the right guy, someone even worse comes along.',
         'Uma divorciada com 33 anos, Emma Moriarity (Sally Field), se muda com seu filho de 12 anos, Jake (Corey Haim), para um lugarejo do Arizona, mais exatamente o Rancho Wilcox, que está decadente. Ela pretende levantar o lugar e recomeçar sua vida adestrando cavalos, algo que entende realmente. Logo faz amizade com um viúvo, Murphy Jones (James Garner), que é bem mais velho que ela mas isto não o impede de ter uma vida social bem ativa, pois existem 10 mulheres para cada homem na localidade. Eles são vistos juntos cada vez mais e, apesar de nada ter acontecido entre eles, tudo indica que é uma questão de tempo. Entretanto o aparecimento súbito de Bobby Jack (Brian Kerwin), o ex-marido dela, pode ser um empecilho. Sem dinheiro e sem emprego, Bobby não tem onde morar e então fica no rancho. Bobby quer Emma de volta, mas ela nem pensa no assunto, enquanto que Jake adora o pai e está feliz com a presença dele no rancho.',
         'O Romance de Murphy', 1985, 3, NOW(), true);
+
+-- Reviews
+INSERT INTO review (text, movie_id, user_id, create_moment, status)
+VALUES ('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tincidunt vulputate interdum. Sed eget erat mollis, fringilla magna eget, viverra metus. Aliquam in fermentum purus. Vivamus eu magna sodales, mollis ipsum id, maximus nisi. Ut posuere efficitur ligula nec molestie. Suspendisse in vehicula neque. Mauris metus mi, mattis eget sapien et, pharetra aliquet leo. Curabitur lobortis augue orci, id aliquam mauris fringilla non. Maecenas in posuere tortor, sit amet dictum mauris. Sed non porta ante, in vehicula sem.',
+        1, 1, NOW(), true);
+
+INSERT INTO review (text, movie_id, user_id, create_moment, status)
+VALUES ('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tincidunt vulputate interdum. Sed eget erat mollis, fringilla magna eget, viverra metus. Aliquam in fermentum purus. Vivamus eu magna sodales, mollis ipsum id, maximus nisi. Ut posuere efficitur ligula nec molestie. Suspendisse in vehicula neque. Mauris metus mi, mattis eget sapien et, pharetra aliquet leo. Curabitur lobortis augue orci, id aliquam mauris fringilla non. Maecenas in posuere tortor, sit amet dictum mauris. Sed non porta ante, in vehicula sem.',
+        2, 1, NOW(), true);
+
+INSERT INTO review (text, movie_id, user_id, create_moment, status)
+VALUES ('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tincidunt vulputate interdum. Sed eget erat mollis, fringilla magna eget, viverra metus. Aliquam in fermentum purus. Vivamus eu magna sodales, mollis ipsum id, maximus nisi. Ut posuere efficitur ligula nec molestie. Suspendisse in vehicula neque. Mauris metus mi, mattis eget sapien et, pharetra aliquet leo. Curabitur lobortis augue orci, id aliquam mauris fringilla non. Maecenas in posuere tortor, sit amet dictum mauris. Sed non porta ante, in vehicula sem.',
+        3, 2, NOW(), true);
+
+INSERT INTO review (text, movie_id, user_id, create_moment, status)
+VALUES ('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tincidunt vulputate interdum. Sed eget erat mollis, fringilla magna eget, viverra metus. Aliquam in fermentum purus. Vivamus eu magna sodales, mollis ipsum id, maximus nisi. Ut posuere efficitur ligula nec molestie. Suspendisse in vehicula neque. Mauris metus mi, mattis eget sapien et, pharetra aliquet leo. Curabitur lobortis augue orci, id aliquam mauris fringilla non. Maecenas in posuere tortor, sit amet dictum mauris. Sed non porta ante, in vehicula sem.',
+        5, 2, NOW(), true);
+
+INSERT INTO review (text, movie_id, user_id, create_moment, status)
+VALUES ('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tincidunt vulputate interdum. Sed eget erat mollis, fringilla magna eget, viverra metus. Aliquam in fermentum purus. Vivamus eu magna sodales, mollis ipsum id, maximus nisi. Ut posuere efficitur ligula nec molestie. Suspendisse in vehicula neque. Mauris metus mi, mattis eget sapien et, pharetra aliquet leo. Curabitur lobortis augue orci, id aliquam mauris fringilla non. Maecenas in posuere tortor, sit amet dictum mauris. Sed non porta ante, in vehicula sem.',
+        3, 2, NOW(), true);
+
+INSERT INTO review (text, movie_id, user_id, create_moment, status)
+VALUES ('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tincidunt vulputate interdum. Sed eget erat mollis, fringilla magna eget, viverra metus. Aliquam in fermentum purus. Vivamus eu magna sodales, mollis ipsum id, maximus nisi. Ut posuere efficitur ligula nec molestie. Suspendisse in vehicula neque. Mauris metus mi, mattis eget sapien et, pharetra aliquet leo. Curabitur lobortis augue orci, id aliquam mauris fringilla non. Maecenas in posuere tortor, sit amet dictum mauris. Sed non porta ante, in vehicula sem.',
+        2, 2, NOW(), true);
