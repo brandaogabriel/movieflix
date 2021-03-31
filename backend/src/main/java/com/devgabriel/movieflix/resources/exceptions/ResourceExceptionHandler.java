@@ -1,6 +1,8 @@
 package com.devgabriel.movieflix.resources.exceptions;
 
+import com.devgabriel.movieflix.services.exceptions.ForbiddenException;
 import com.devgabriel.movieflix.services.exceptions.ResourceNotFoundException;
+import com.devgabriel.movieflix.services.exceptions.UnauthorizedException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -23,6 +25,20 @@ public class ResourceExceptionHandler {
   public ResponseEntity<StandardError> illegalArgument(IllegalArgumentException e, HttpServletRequest request) {
     HttpStatus status = HttpStatus.BAD_REQUEST;
     StandardError err = createStandardError(status, e.getMessage(), "Bad request", request.getRequestURI());
+    return ResponseEntity.status(status).body(err);
+  }
+
+  @ExceptionHandler(ForbiddenException.class)
+  public ResponseEntity<OAuthCustomError> forbidden(ForbiddenException e, HttpServletRequest request) {
+    HttpStatus status = HttpStatus.FORBIDDEN;
+    OAuthCustomError err = new OAuthCustomError("Forbidden", e.getMessage());
+    return ResponseEntity.status(status).body(err);
+  }
+
+  @ExceptionHandler(UnauthorizedException.class)
+  public ResponseEntity<OAuthCustomError> unauthorized(UnauthorizedException e, HttpServletRequest request) {
+    HttpStatus status = HttpStatus.UNAUTHORIZED;
+    OAuthCustomError err = new OAuthCustomError("Unauthorized", e.getMessage());
     return ResponseEntity.status(status).body(err);
   }
 
