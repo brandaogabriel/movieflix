@@ -2,12 +2,18 @@ package com.devgabriel.movieflix.dtos;
 
 import com.devgabriel.movieflix.entities.Review;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 import java.io.Serializable;
 
 public class ReviewDTO implements Serializable {
 
   private Long id;
+
+  @NotBlank(message = "Você deve informar um texto")
+  @Size(min = 4, message = "O texto deve conter pelo menos quatro caracteres")
   private String text;
+
   private UserDTO user;
   private Long movieId;
 

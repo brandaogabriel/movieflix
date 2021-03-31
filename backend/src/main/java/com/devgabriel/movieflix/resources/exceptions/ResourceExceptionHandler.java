@@ -5,6 +5,8 @@ import com.devgabriel.movieflix.services.exceptions.ResourceNotFoundException;
 import com.devgabriel.movieflix.services.exceptions.UnauthorizedException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.FieldError;
+import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
@@ -28,6 +30,10 @@ public class ResourceExceptionHandler {
     return ResponseEntity.status(status).body(err);
   }
 
+  private StandardError createStandardError(HttpStatus status, String error, String message, String requestUri) {
+    return new StandardError(Instant.now(), status.value(), error, message, requestUri);
+  }
+
   @ExceptionHandler(ForbiddenException.class)
   public ResponseEntity<OAuthCustomError> forbidden(ForbiddenException e, HttpServletRequest request) {
     HttpStatus status = HttpStatus.FORBIDDEN;
@@ -42,7 +48,19 @@ public class ResourceExceptionHandler {
     return ResponseEntity.status(status).body(err);
   }
 
-  private StandardError createStandardError(HttpStatus status, String error, String message, String requestUri) {
-    return new StandardError(Instant.now(), status.value(), error, message, requestUri);
+  @ExceptionHandler(MethodArgumentNotValidException.class)
+  public ResponseEntity<ValidationError> validation(MethodArgumentNotValidException e, HttpServletRequest request) {
+    HttpStatus status = HttpStatus.UNPROCESSABLE_ENTITY;
+    ValidationError err = new ValidationError();
+    err.setTimeStamp(Instant.now());
+    err.setStatus(status.value());
+    err.setError("Validation exception");
+    err.setMessage(e.getMessage());
+    err.setPath(request.getRequestURI());
+
+    for(FieldError f : e.getBindingResult().getFieldErrors())
+      err.addError(f.getField(), f.getDefaultMessage());
+
+    return ResponseEntity.status(status).body(err);
   }
 }
