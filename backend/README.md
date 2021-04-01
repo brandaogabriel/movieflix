@@ -1,6 +1,7 @@
-# 💻 Backend Movieflix
+# 💻 Back end Movieflix
 
-A api foi desenvolvida como projeto final para o Bootcamp da DevSuperior.
+A api foi desenvolvida como projeto final para o Bootcamp da DevSuperior. Com ela é possível ver todos os filmes, ver
+filmes por categoria e realizar comentários nos filmes.
 
 A implantação da api foi feita utilizando o heroku.
 
