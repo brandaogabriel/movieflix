@@ -9,7 +9,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class AuthService {
@@ -18,7 +17,6 @@ public class AuthService {
   @Autowired
   private UserRepository repository;
 
-  @Transactional(readOnly = true)
   public User authenticated() {
     LOG.info("method=authenticated, msg=search user authenticated");
     try {

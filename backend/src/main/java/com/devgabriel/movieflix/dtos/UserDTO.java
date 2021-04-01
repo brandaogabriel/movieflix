@@ -12,7 +12,7 @@ public class UserDTO implements Serializable {
   private String name;
   private String email;
 
-  private List<RoleDTO> roles = new ArrayList<>();
+  private final List<RoleDTO> roles = new ArrayList<>();
 
   public UserDTO() {
   }

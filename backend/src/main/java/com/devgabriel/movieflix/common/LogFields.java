@@ -29,7 +29,7 @@ public abstract class LogFields implements Serializable {
   @JsonFormat(shape = JsonFormat.Shape.NUMBER)
   private Boolean status = true;
 
-  public LogFields() {
+  protected LogFields() {
   }
 
   public Instant getCreateMoment() {
