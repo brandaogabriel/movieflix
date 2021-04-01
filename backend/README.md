@@ -56,7 +56,7 @@ o `client-id=movieflix` e o `client-secret=movieflix123`.
 - Em "grant_type", coloque seu valor como `password`. (Isso indica o método de autenticação do sistema).
 
 **OBS³:** O usuário "admin" é super-usuário da aplicação, dessa forma tem acesso a todas as rotas. Caso queira ver
-outros usuário veja o arquivo em `src/main/resources/data.sql`.
+outros usuários veja o arquivo em `src/main/resources/data.sql`.
 
 ### Genres
 
@@ -72,7 +72,7 @@ outros usuário veja o arquivo em `src/main/resources/data.sql`.
 - `/movies` - GET - Exibe todos os filmes cadastrados paginados e ordenados por título.
 - `/movies/{id}` - GET - Exibe as informações específicas de um filme bem como seus comentários (reviews).
 
-### Categories
+### Reviews
 
 **APENAS USUÁRIOS AUTENTICADOS PODEM ACESSAR AS ROTAS**
 
