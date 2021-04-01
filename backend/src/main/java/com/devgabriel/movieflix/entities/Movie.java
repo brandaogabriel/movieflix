@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Objects;
 
 @Entity
-@Table(name = "movie")
+@Table(name = "tb_movie")
 public class Movie extends LogFields {
 
   @Id

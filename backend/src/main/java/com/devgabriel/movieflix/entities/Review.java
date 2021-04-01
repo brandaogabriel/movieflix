@@ -6,7 +6,7 @@ import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
-@Table(name = "review")
+@Table(name = "tb_review")
 public class Review extends LogFields {
 
   @Id
