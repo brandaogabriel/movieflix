@@ -10,9 +10,8 @@ uma IDE de sua preferência.
 
 ## 🔌 Configurações para inicialização
 
-- **O backend está setado em modo de PRODUÇÃO, acesse `src/main/resources/application.properties` e
-  troque `spring.profiles.active=prod` por `spring.profiles.active=test`. Com essa mudança, sua aplicação funcionará
-  localmente, e será utilizado o banco de dados em memória (H2).**
+- **O back end está setado em modo de TESTE, sua aplicação funcionará localmente, e será utilizado o banco de dados em
+  memória (H2).**
 
 Execute o comando: `mvn install` para instalar as dependências do maven.
 
