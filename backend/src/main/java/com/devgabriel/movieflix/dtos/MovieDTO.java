@@ -3,7 +3,7 @@ package com.devgabriel.movieflix.dtos;
 import com.devgabriel.movieflix.entities.Movie;
 import com.devgabriel.movieflix.entities.Review;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import io.swagger.annotations.ApiModelProperty;
+import io.swagger.v3.oas.annotations.media.Schema;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -21,28 +21,28 @@ import java.util.List;
 })
 public class MovieDTO implements Serializable {
 
-  @ApiModelProperty(position = 1, example = "1")
+  @Schema(example = "1")
   private Long id;
 
-  @ApiModelProperty(position = 2, example = "Miraculous: As aventuras de LadyBug")
+  @Schema(example = "Miraculous: As aventuras de LadyBug")
   private String title;
 
-  @ApiModelProperty(position = 3, example = "Prepara-se para a maior aventura!")
+  @Schema(example = "Prepara-se para a maior aventura!")
   private String subTitle;
 
-  @ApiModelProperty(position = 4, example = "2015")
+  @Schema(example = "2015")
   private Integer year;
 
-  @ApiModelProperty(position = 5, example = "https://www.themoviedb.org/t/p/w533_and_h300_bestv2/aSy0zROlkSSJEcHj7UvdvPOaMpq.jpg")
+  @Schema(example = "https://www.themoviedb.org/t/p/w533_and_h300_bestv2/aSy0zROlkSSJEcHj7UvdvPOaMpq.jpg")
   private String imgUrl;
 
-  @ApiModelProperty(position = 6, example = "Ladybug é uma heroína que tem a missão de defender Paris de um vilão misterioso. Junto com o parceiro Cat Noir, eles devem conciliar o dia a dia com a vida de super-heróis.")
+  @Schema(example = "Ladybug é uma heroína que tem a missão de defender Paris de um vilão misterioso. Junto com o parceiro Cat Noir, eles devem conciliar o dia a dia com a vida de super-heróis.")
   private String synopsis;
 
-  @ApiModelProperty(position = 7, example = "1")
+  @Schema(example = "1")
   private Long genreId;
 
-  @ApiModelProperty(position = 8)
+  @Schema
   private final List<ReviewDTO> reviews = new ArrayList<>();
 
   public MovieDTO() {

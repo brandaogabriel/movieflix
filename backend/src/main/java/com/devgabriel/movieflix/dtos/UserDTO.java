@@ -1,7 +1,7 @@
 package com.devgabriel.movieflix.dtos;
 
 import com.devgabriel.movieflix.entities.User;
-import io.swagger.annotations.ApiModelProperty;
+import io.swagger.v3.oas.annotations.media.Schema;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -9,16 +9,16 @@ import java.util.List;
 
 public class UserDTO implements Serializable {
 
-  @ApiModelProperty(position = 1, example = "1")
+  @Schema(example = "1")
   private Long id;
 
-  @ApiModelProperty(position = 1, example = "Bob Brown")
+  @Schema(example = "Bob Brown")
   private String name;
 
-  @ApiModelProperty(position = 3, example = "bob@gmail.com")
+  @Schema(example = "bob@gmail.com")
   private String email;
 
-  @ApiModelProperty(position = 4)
+  @Schema
   private final List<RoleDTO> roles = new ArrayList<>();
 
   public UserDTO() {

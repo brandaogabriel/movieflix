@@ -1,26 +1,26 @@
 package com.devgabriel.movieflix.dtos;
 
 import com.devgabriel.movieflix.entities.Review;
-import io.swagger.annotations.ApiModelProperty;
+import io.swagger.v3.oas.annotations.media.Schema;
 
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Size;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 import java.io.Serializable;
 
 public class ReviewDTO implements Serializable {
 
-  @ApiModelProperty(position = 1, example = "1")
+  @Schema(example = "1")
   private Long id;
 
-  @ApiModelProperty(position = 2, example = "Nice movie, adorable!")
+  @Schema(example = "Nice movie, adorable!")
   @NotBlank(message = "Você deve informar um texto")
   @Size(min = 4, message = "O texto deve conter pelo menos quatro caracteres")
   private String text;
 
-  @ApiModelProperty(position = 3)
+  @Schema
   private UserDTO user;
 
-  @ApiModelProperty(position = 4, example = "1")
+  @Schema(example = "1")
   private Long movieId;
 
   public ReviewDTO() {
