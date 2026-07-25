@@ -3,8 +3,8 @@ package com.devgabriel.movieflix.dtos;
 import com.devgabriel.movieflix.entities.Review;
 import io.swagger.annotations.ApiModelProperty;
 
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Size;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 import java.io.Serializable;
 
 public class ReviewDTO implements Serializable {
