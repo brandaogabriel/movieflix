@@ -2,7 +2,7 @@ package com.devgabriel.movieflix.entities;
 
 import com.devgabriel.movieflix.common.LogFields;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 import java.util.Objects;
 
 @Entity
