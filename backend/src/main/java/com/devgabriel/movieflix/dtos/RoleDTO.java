@@ -1,16 +1,16 @@
 package com.devgabriel.movieflix.dtos;
 
 import com.devgabriel.movieflix.entities.Role;
-import io.swagger.annotations.ApiModelProperty;
+import io.swagger.v3.oas.annotations.media.Schema;
 
 import java.io.Serializable;
 
 public class RoleDTO implements Serializable {
 
-  @ApiModelProperty(position = 1, example = "1")
+  @Schema(example = "1")
   private Long id;
 
-  @ApiModelProperty(position = 2, example = "ROLE_MEMBER")
+  @Schema(example = "ROLE_MEMBER")
   private String authority;
 
   public RoleDTO() {
