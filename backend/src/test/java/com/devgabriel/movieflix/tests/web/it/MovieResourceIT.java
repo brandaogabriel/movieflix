@@ -45,11 +45,7 @@ class MovieResourceIT {
 
   JacksonJsonParser jsonParser = new JacksonJsonParser();
 
-  @Value("${security.oauth2.client.client-id}")
-  private String clientId;
 
-  @Value("${security.oauth2.client.client-secret}")
-  private String clientSecret;
 
   private long existingId;
   private long nonExistingId;
@@ -209,16 +205,14 @@ class MovieResourceIT {
   }
 
   private String obtainAccessToken(String username, String password) throws Exception {
-    MultiValueMap<String, String> params = new LinkedMultiValueMap<>();
-    params.add("grant_type", "password");
-    params.add("client_id", clientId);
-    params.add("username", username);
-    params.add("password", password);
+    String jsonBody = "{\"email\":\"" + username + "\",\"password\":\"" + password + "\"}";
 
     ResultActions result = mockMvc
-            .perform(post("/oauth/token").params(params).with(httpBasic(clientId, clientSecret))
-                    .accept("application/json;charset=UTF-8"))
-            .andExpect(status().isOk()).andExpect(content().contentType("application/json;charset=UTF-8"));
+            .perform(post("/auth/login")
+                    .content(jsonBody)
+                    .contentType(MediaType.APPLICATION_JSON)
+                    .accept(MediaType.APPLICATION_JSON))
+            .andExpect(status().isOk());
 
     String resultString = result.andReturn().getResponse().getContentAsString();
 
