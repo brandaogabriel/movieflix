@@ -1,5 +1,5 @@
 name: Maven CI
-run-name: Executando na branch ${{ github.head_ref || github.ref_name }}
+run-name: Execução de CI para branch ${{ github.head_ref || github.ref_name }}
 
 on:
   pull_request:
