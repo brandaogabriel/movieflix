@@ -4,12 +4,11 @@ run-name: Execução de CI para branch ${{ github.head_ref || github.ref_name }}
 on:
   pull_request:
     branches:
-      - main
-      - staging
       - dev
 
 jobs:
   continuous-integration:
+    if: github.event_name == 'pull_request' && github.event.pull_request.base.ref == 'dev'
     runs-on: ubuntu-latest
 
     steps:
