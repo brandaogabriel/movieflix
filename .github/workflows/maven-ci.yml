@@ -2,8 +2,9 @@ name: Maven CI
 
 on:
   pull_request:
-    - dev
-    - staging
+    branches:
+      - dev
+      - staging
 
 jobs:
   build:
