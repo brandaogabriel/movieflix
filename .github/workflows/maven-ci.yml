@@ -1,0 +1,28 @@
+name: Maven CI
+run-name: Execução de CI para branch ${{ github.head_ref || github.ref_name }}
+
+on:
+  pull_request:
+    branches:
+      - main
+      - staging
+      - dev
+
+jobs:
+  continuous-integration:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 25
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '25'
+          cache: 'maven'
+
+      - name: Build with Maven
+        working-directory: backend
+        run: mvn -B -V clean verify
