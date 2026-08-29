@@ -1,7 +1,7 @@
 name: Maven CI
+run-name: Execução de CI para branch ${{ github.head_ref || github.ref_name }}
 
 on:
-  push:
   pull_request:
     branches:
       - main
@@ -9,7 +9,7 @@ on:
       - dev
 
 jobs:
-  build:
+  continuous-integration:
     runs-on: ubuntu-latest
 
     steps:
@@ -26,4 +26,3 @@ jobs:
       - name: Build with Maven
         working-directory: backend
         run: mvn -B -V clean verify
-
