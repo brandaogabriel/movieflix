@@ -1,10 +1,14 @@
 name: Maven CI
 
 on:
+  push:
+    branches-ignore:
+      - '*'
   pull_request:
     branches:
-      - dev
+      - main
       - staging
+      - dev
 
 jobs:
   build:
@@ -24,3 +28,4 @@ jobs:
       - name: Build with Maven
         working-directory: backend
         run: mvn -B -V clean verify
+
