@@ -1,7 +1,7 @@
 name: Maven CI
+run-name: Executando na branch ${{ inputs.deploy_target }} by @${{ github.actor }}
 
 on:
-  push:
   pull_request:
     branches:
       - main
@@ -9,7 +9,7 @@ on:
       - dev
 
 jobs:
-  build:
+  continuous-integration:
     runs-on: ubuntu-latest
 
     steps:
