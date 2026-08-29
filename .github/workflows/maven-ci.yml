@@ -3,9 +3,12 @@ name: Maven CI
 on:
   push:
     branches-ignore:
-      - dev
-      - staging
+      - '*'
+  pull_request:
+    branches:
       - main
+      - staging
+      - dev
 
 jobs:
   build:
