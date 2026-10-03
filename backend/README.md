@@ -104,3 +104,4 @@ outros usuários veja o arquivo em `src/main/resources/data.sql`.
 
 Na pasta `src/main/resources` existe um arquivo **data.sql** com alguns dados já adicionados, para inserir novos dados
 manualmente, basta incluí-los no arquivo. 
+
